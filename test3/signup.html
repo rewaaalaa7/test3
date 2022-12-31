@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Help Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+
+    <div class="background">
+    <form class="box" >
+        <h1> SIGN-UP</h1>
+        <input type="text"  name="" placeholder=" First Name" id="fname" required>
+        <input type="text" name="" placeholder="Last Name" id="sname" required>
+        <input type="text" name="" placeholder="User-Name" id="uname" required>
+        <input type="email" name="" placeholder="Email" id="email" required>
+        <input type="password" name="" placeholder="Password" id="password"required>
+        <input type="password" name="" placeholder="Re-Password" id="repassword" required>
+        <button id="btn"> 
+            <a class="HomePageLink" id="linkHomePage" onclick="validate2()"> Sign up </a>
+        </button>
+    </form>
+</div>
+
+    <script>
+    function validate2()
+    {
+        var password= document.getElementById("password").value;
+        var fname= document.getElementById("fname").value;
+        var sname= document.getElementById("sname").value;
+        var uname= document.getElementById("uname").value;
+        var email= document.getElementById("email").value;
+        var repassword= document.getElementById("repassword").value;
+        let linkHomePage=document.getElementById('linkHomePage');
+        
+        if (fname==0 ||sname==0||uname==0)
+        {  
+            alert("Fields can't be blank");  
+        }
+        else if(password.length <6)
+        {  
+        alert("Password must be at least 6 characters.");  
+        }
+        else if(password.length >=10)
+        {  
+        alert("Password must be less than 10 characters.");  
+        }
+        else if(repassword!=password)
+        {
+            alert("Re-Password must be matched to Password");  
+        }
+        else
+            {
+                alert("login succesfully")
+                linkHomePage.setAttribute('href','home.html')
+            }
+            console.log(linkHomePage)
+    }
+
+    console.log(fname)
+    </script> 
+
+
+</body>
+</html>
